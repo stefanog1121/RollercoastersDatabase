@@ -1,0 +1,6 @@
+This table details park seasonal events, including its name and seasonal theme.
+
+CREATE TABLE "112FARROS"."XEVENT"
+( "EVENT_NUM" NUMBER NOT NULL ENABLE,
+"EVENT_NAME" VARCHAR2(40 BYTE), "EVENT_SEAS" VARCHAR2(20 BYTE),
+CONSTRAINT "PK_ENUM" PRIMARY KEY ("EVENT_NUM");

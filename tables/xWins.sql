@@ -1,0 +1,6 @@
+-- This table joins rollercoasters with awards they may have won.
+
+CREATE TABLE "112FARROS"."XWINS"
+( "COAST_NUM" NUMBER NOT NULL ENABLE,
+"AWARD_ID" NUMBER NOT NULL ENABLE,
+CONSTRAINT "PK_WINS" PRIMARY KEY ("COAST_NUM", "AWARD_ID")

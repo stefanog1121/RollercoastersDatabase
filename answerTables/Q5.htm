@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF8'>
+  
+  <title>Result Data</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <style>
+  * { 
+    margin: 0; 
+    padding: 0; 
+  }
+  body { 
+    font: 14px/1.4 Palatino, Serif; 
+  }
+  
+  /* 
+  Generic Styling, for Desktops/Laptops 
+  */
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+  }
+  /* Zebra striping */
+  tr:nth-of-type(odd) { 
+    background: #eee; 
+  }
+  th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+  }
+  td, th { 
+    padding: 6px; 
+    border: 1px solid #9B9B9B; 
+    text-align: left; 
+  }
+  @media 
+  only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead tr { position: absolute;top: -9999px;left: -9999px;}
+    tr { border: 1px solid #9B9B9B; }
+    td { border: none;border-bottom: 1px solid #9B9B9B; position: relative;padding-left: 50%; }
+    
+    td:before { position: absolute;top: 6px;left: 6px;width: 45%; padding-right: 10px; white-space: nowrap;}
+    
+    /*
+    Label the data
+    */
+td:nth-of-type(1):before { content: "PARK_NAME"; }
+td:nth-of-type(2):before { content: "COAST_NAME"; }
+td:nth-of-type(3):before { content: "LENGTH"; }
+  }
+  
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    body { 
+      padding: 0; 
+      margin: 0; 
+      width: 320px; }
+    }
+  
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body { 
+      width: 495px; 
+    }
+  }
+  
+  </style>
+  <!--<![endif]-->
+<script type="text/javascript">
+
+function search(){
+  
+  var s = document.getElementById('search').value;
+
+  rows = document.getElementById('data').getElementsByTagName('TR');
+  for(var i=0;i<rows.length;i++){
+    if ( rows[i].textContent.indexOf(s)>0  || s.length==0 ) {
+	  rows[i].style.display ='';
+    } else {
+      rows[i].style.display ='none';
+    }
+  }
+}
+
+
+var timer;
+function delayedSearch() {
+	clearTimeout(timer);
+	console.log('delay-ing')
+    timer = setTimeout(function () {
+		console.log('delay-running')
+		search();
+    }, 500);
+  }</script>
+</head>
+
+<body>
+<div><input type="text" size="30" maxlength="1000" value="" id="search" onkeyup="delayedSearch();" /><input type="button" value="Go" onclick="lsearch();"/> </div>
+<table><thead><tr>	<th>PARK_NAME</th>
+	<th>COAST_NAME</th>
+	<th>LENGTH</th>
+</tr></thead>
+<tbody id="data">
+
+	<tr>
+<td>Great Adventure</td>
+<td>Nitro</td>
+<td align="right">5394</td>
+	</tr>
+	<tr>
+<td>Magic Mountain</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>New England</td>
+<td>Superman the Ride</td>
+<td align="right">5400</td>
+	</tr>
+	<tr>
+<td>Great America</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Fiesta Texas</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Over Texas</td>
+<td>Titan</td>
+<td align="right">5312</td>
+	</tr>
+	<tr>
+<td>Cedar Point</td>
+<td>Millenium Force</td>
+<td align="right">6595</td>
+	</tr>
+	<tr>
+<td>Cedar Point</td>
+<td>Steel Vengance</td>
+<td align="right">5740</td>
+	</tr>
+	<tr>
+<td>Carowinds</td>
+<td>Fury 325</td>
+<td align="right">6602</td>
+	</tr>
+	<tr>
+<td>Carowinds</td>
+<td>Intimidator</td>
+<td align="right">5316</td>
+	</tr>
+	<tr>
+<td>Dorney Park</td>
+<td>Steel Force</td>
+<td align="right">5600</td>
+	</tr>
+	<tr>
+<td>Kings Island</td>
+<td>Beast</td>
+<td align="right">7361</td>
+	</tr>
+	<tr>
+<td>Kings Island</td>
+<td>Diamondback</td>
+<td align="right">5282</td>
+	</tr>
+	<tr>
+<td>Kings Island</td>
+<td>Orion</td>
+<td align="right">5321</td>
+	</tr>
+	<tr>
+<td>Knott's Berry Farm</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Dollywood</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Kentucky Kingdom</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Silver Dollar City</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Hersheypark</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Morey's Piers</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Kennywood</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Knoebels</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Nickelodeon Universe</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Lake Compounce</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>California's Great Adventure</td>
+<td>&nbsp;</td>
+<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+<td>Holiday World</td>
+<td>Voyage</td>
+<td align="right">6442</td>
+	</tr>
+</tbody></table><!-- SQL:
+SELECT /*+ */  * FROM "112FARROS"."FINQUERY5"--></body></html>
